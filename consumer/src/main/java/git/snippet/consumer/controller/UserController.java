@@ -2,8 +2,7 @@ package git.snippet.consumer.controller;
 
 import git.snippet.consumer.model.User;
 import git.snippet.consumer.service.UserFeignService;
-import io.swagger.annotations.ApiParam;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,7 +26,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String addUser(@RequestBody @ApiParam(name = "用户", value = "传入json格式", required = true) User user) {
+    public String addUser(@RequestBody User user) {
         return userFeignService.addUser(user);
     }
 
@@ -38,7 +37,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public String updateUser(@RequestBody @ApiParam(name = "用户", value = "传入json格式", required = true) User user) {
+    public String updateUser(@RequestBody User user) {
         return userFeignService.updateUser(user);
     }
 
