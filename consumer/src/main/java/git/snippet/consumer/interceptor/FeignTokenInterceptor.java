@@ -1,4 +1,4 @@
-package git.snippet.consumer.Interceptor;
+package git.snippet.consumer.interceptor;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
